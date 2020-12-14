@@ -2,9 +2,10 @@
 # The Attacker VM:
 # Add atacker user
 
+adduser attacker
 cd /home/attacker
-apt upadte
-apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree
+apt update
+apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree git
 service apache2 start
 service ssh start
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
@@ -27,43 +28,43 @@ cd Cheatsheets
 
 	# Something about Flask
 
-	# Metasploit
-	# mkdir metasploit
-	# cd metasploit
-	# wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
+	Metasploit
+	mkdir metasploit
+	cd metasploit
+	wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
 
-	# wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
+	wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
 
-	# wget -E -H -k -K -p "https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/"
+	wget -E -H -k -K -p "https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/"
 
-	# cd ..
+	cd ..
 
-	# # Meterpreter from php shell
-	# mkdir php_webshell_to_meterpreter
-	# cd php_webshell_to_meterpreter
-	# wget -E -H -k -K -p "https://www.hackingarticles.in/webshell-to-meterpreter/"
-	# cd ..
+	# Meterpreter from php shell
+	mkdir php_webshell_to_meterpreter
+	cd php_webshell_to_meterpreter
+	wget -E -H -k -K -p "https://www.hackingarticles.in/webshell-to-meterpreter/"
+	cd ..
 
-	# # Nmap
-	# mkdir nmap
-	# cd nmap
-	# wget -E -H -k -K -p "https://www.stationx.net/nmap-cheat-sheet/"
-	# cd ..
+	# Nmap
+	mkdir nmap
+	cd nmap
+	wget -E -H -k -K -p "https://www.stationx.net/nmap-cheat-sheet/"
+	cd ..
 
 
-	# # msfvenum
-	# mkdir msfvenum
-	# cd msfvenum
-	# wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/24/msfvenom-cheatsheet/"
-	# cd ..
+	# msfvenum
+	mkdir msfvenum
+	cd msfvenum
+	wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/24/msfvenom-cheatsheet/"
+	cd ..
 
-	# # Hashcat
+	# Hashcat
 
-	# # hydra
-	# mkdir hydra
-	# cd hydra
-	# wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/25/hydra-brute-force-techniques/"
-	# cd ..
+	# hydra
+	mkdir hydra
+	cd hydra
+	wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/25/hydra-brute-force-techniques/"
+	cd ..
 
 	# gobuster from red team toturials.
 
@@ -80,7 +81,7 @@ cd tools
 	cd metasploit_installer
 	curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
 	chmod +x msfinstall
-	sudo ./msfinstall
+	./msfinstall
 
 	# Hashcat
 	apt install -y hashcat
@@ -97,6 +98,7 @@ cd tools
 	# Word lists for brute forcing.
 
 	# Beef installation:
+	cd /home/attacker/tools
 	git clone https://github.com/beefproject/beef.git
 	cd beef
 	apt upadte
@@ -105,8 +107,9 @@ cd tools
 	echo "en_US.UTF-8" >> /etc/local.gem
 	echo "LANG=en_US.UTF-8" > /etc/local.conf
 	local-gen en_US.UTF-8
+	bundle install
 	# inside ./install replace all sudo with nothing
-	python3 -c "x = open('./install', 'r').read(); x.close(); open('./install', 'w').write(data.replace('sudo ', ''))" 
+	python3 -c "x = open('./install', 'r'); data=x.read(); x.close(); open('./install', 'w').write(data.replace('sudo ', ''))" 
 	chmod +x ./install
 	./install
 	# Should set time to new york
