@@ -25,7 +25,7 @@ def the_main_website():
 def do_admin_login():
 	creds = json.load("creds.json")
 	is_valid_password = pass # execute the authentication validator.
-	if request.form['username'] in creds.keys() and hashlib.md5(request.form['password']).hexdigest() == creds[request.form['username']]:
+	if is_valid_password:
 		session['logged_in'] = True
 	else:
 		flash('wrong password!')

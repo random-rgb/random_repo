@@ -5,7 +5,7 @@
 adduser attacker
 cd /home/attacker
 apt update
-apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree git
+apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree git simpleproxy
 service apache2 start
 service ssh start
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
@@ -19,6 +19,8 @@ cd Cheatsheets
 
 	# Something about how to use python requests.
 	# python3; import requests; help(requests)
+	
+	# something about simpleproxy
 
 	# Something about apache.
 	mkdir apache2
