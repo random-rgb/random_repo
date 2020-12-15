@@ -65,9 +65,6 @@ if __name__ == "__main__":
 
 # =========================================================================================
 
-apt update 
-apt install -y python3 python3-pip
-pip3 intsall flask flask_cors
 
 # =========================================================================================
 
@@ -119,17 +116,7 @@ docker exec -it $container_name sh installations.sh
 
 # =========================================================================================
 
-# installations.sh for zip slip vulnerability.
-cd /home/fileserver
-apt update
-apt install -y curl tar
 
-curl -O https://www.python.org/ftp/python/3.6.0/Python-3.6.0.tgz
-tar -xvzf Python-3.6.0.tgz
-cd Python-3.6.0
-./configure
-make
-sudo make install
 
 # =========================================================================================
 # =========================================================================================
