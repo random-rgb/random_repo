@@ -1,6 +1,8 @@
 # PHPmailer vulnerability
 
-# https://github.com/opsxcq/exploit-CVE-2016-10033.git
-chmod 777 main.sh
-docker build --tag first_webserver_base_image .
-docker run --rm -it --name first_webserver_$1 -p 8080:80 first_webserver_base_image
+container_name=first_website_$1
+docker run --rm -idt --name $container_name ubuntu
+# copy the website.
+docker cp ./installations.sh $container_name:/home/installations.sh
+docker exec -it $container_name sh /home/installations.sh
+

