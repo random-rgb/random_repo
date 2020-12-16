@@ -85,6 +85,12 @@ cd tools
 	chmod +x msfinstall
 	./msfinstall
 
+
+	# Change the phpmailer file.
+	/opt/metasploit-framework/embedded/framework/modules/exploits/multi/http
+
+
+
 	# Hashcat
 	apt install -y hashcat
 
