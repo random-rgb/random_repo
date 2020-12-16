@@ -54,8 +54,8 @@ class MetasploitModule < Msf::Exploit::Remote
 
     register_options(
       [
-        OptString.new('LOCAL_FILE_PATH',  [true, 'Path of the file to upload', '/home/moses']),
-        OptString.new('REMOTE_BACKDOOR_NAME',  [true, 'Path of the file to upload', 'b.php']),
+        OptString.new('LOCAL_FILE_PATH',  [true, 'Path of the file to upload', '/']),
+        OptString.new('REMOTE_BACKDOOR_NAME',  [true, 'Path of the file to upload', 'backdoor.php']),
         OptString.new('WEB_ROOT',   [true, 'Path to the web root', '/var/www/html'])
       ])
 
