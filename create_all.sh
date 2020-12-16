@@ -8,3 +8,5 @@ docker save -o image_file image_tag
 
 # To load the docker image
 
+# Do Chmod +x to everything nessesarry.
+
