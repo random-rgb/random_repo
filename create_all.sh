@@ -6,10 +6,10 @@
 ./python_sandbox_escape/create.sh $1
 
 # turn all running containers to images.
-docker commit container_id image name
+# docker commit container_id image name
 
 # turn containers into images.
-docker save -o image_file image_tag
+# docker save -o image_file image_tag
 
 # To load the docker image
 
