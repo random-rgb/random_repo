@@ -6,3 +6,6 @@ docker exec -it $container_name sh /home/installations.sh
 
 # Change the phpmailer exploit:
 docker cp new_phpmailer_arg_injection.rb $container_name:/opt/metasploit-framework/embedded/framework/modules/exploits/multi/http/phpmailer_arg_injection.rb
+
+# Copy cheatsheets
+docker cp ./cheatsheets $container_name:/home/attacker/cheatsheets
