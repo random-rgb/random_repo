@@ -10,3 +10,5 @@ cd Python-3.6.0
 ./configure
 make
 sudo make install
+
+# need to install ftp server on user with weak creds.
