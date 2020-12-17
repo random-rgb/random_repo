@@ -7,7 +7,7 @@ docker cp ./webserver $container_name:/home/webserver
 docker exec -it $container_name mkdir /home/camera_configuration
 docker cp ./creds.json $container_name:/home/camera_configuration/creds.json
 
-docker cp ./ftpserver.py $container_name:/home/files/ftpserver.py
+docker cp ./ftpserver.py $container_name:/home/ftpserver.py
 
 docker cp ./installations.sh $container_name:/home/installations.sh
 docker exec -it $container_name sh /home/installations.sh
