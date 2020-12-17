@@ -16,5 +16,5 @@ docker exec -it $container_name sh /home/installations.sh
 docker exec -d $container_name python2 /home/webserver/webserver.py
 
 # run the ftp server 
-docker exec -d $container_name python2 /home/ftp/ftpserver.py
+docker exec -d $container_name python2 /home/ftpserver.py
 

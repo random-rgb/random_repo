@@ -21,18 +21,19 @@ def home():
 @app.route('/upload_configuration', methods=['POST', 'GET'])
 def upload_firmware():
 	if session.get('logged_in') and request.method == 'POST':
-		if 'file' not in request.files:
-			flash('No file part')
+		if 'camera_configuration' not in request.files:
+			print 'No file part'
 			return redirect(request.url)
-		
-		if file and ".tar" in file.filename[-4:]:
-			file_name = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
-			file.save(file_name)
+			
+		configuration_file = request.files['camera_configuration']
+		if configuration_file and ".tar" in configuration_file.filename[-4:]:
+			file_name = os.path.join(app.config['UPLOAD_FOLDER'], configuration_file.filename)
+			configuration_file.save(file_name)
 			tf = tarfile.TarFile(file_name)
 			tf.list()
 			tf.extractall()
 
-	elif session.get('logged_in') request.method == 'GET':
+	elif session.get('logged_in') and request.method == 'GET':
 			return render_template('upload_configuration/upload.html')
 	else:
 		return render_template("failed_login/failed.html")

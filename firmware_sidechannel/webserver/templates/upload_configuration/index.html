@@ -5,28 +5,24 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Camera - Upload configuration page</title>
+  <title>Letter - Simple Sign Up Form</title>
 <!-- 
 
 Letter Template 
 
 https://templatemo.com/tm-510-letter
 
-
-
 Template Re-distribution is NOT allowed.
 
 -->
-  <link rel="stylesheet" href="templates/upload_configuration/css/google_font.css">  <!-- Google web font "Open Sans" -->
+  <link rel="stylesheet" href="templates/upload_configuration/css/google_fonts.css">  <!-- Google web font "Open Sans" -->
   <link rel="stylesheet" href="templates/upload_configuration/css/font-awesome.min.css">
   <link rel="stylesheet" href="templates/upload_configuration/css/bootstrap.min.css">
   
   <link rel="stylesheet" href="templates/upload_configuration/css/demo.css" />
-  <link rel="stylesheet" href="templates/upload_configuration/css/upload.css" />
 
   <link rel="stylesheet" href="templates/upload_configuration/css/templatemo-style.css">
   
-  <script type="text/javascript" src="templates/upload_configuration/js/upload.js"></script>
   <script type="text/javascript" src="templates/upload_configuration/js/modernizr.custom.86080.js"></script>
 		
 	</head>
@@ -50,15 +46,18 @@ Template Re-distribution is NOT allowed.
 					<header class="mb-5"><h1>Letter</h1></header>
 					<P class="mb-5">A sign-up letter template with three background images shuffling by fade in out movements. Thank you for visiting our site!</P>
 					
-                    <form action="/upload_configuration" method="post">
-						  <div class="input-file-container">  
-						    <input class="input-file" id="camera_configuration" type="file">
-						    <label tabindex="0" for="camera_configuration" class="input-file-trigger">Select a file...</label>
-						  </div>
-						  <p class="file-return"></p>
+                    <form action="/upload_configuration" method="post" class="subscribe-form">
+               	    	<div class="row form-section">
+
+							<div class="col-md-7 col-sm-7 col-xs-7">
+			                      <input name="email" type="file" class="form-control" id="contact_email" placeholder="Your Email..." required/>
+				  			</div>
+							<div class="col-md-5 col-sm-5 col-xs-5">
+								<button type="submit" class="tm-btn-subscribe">Subscribe</button>
+							</div>
+						
+						</div>
                     </form>
-                    
-                    
                     
 					<div class="tm-social-icons-container text-xs-center">
 	                    <a href="#" class="tm-social-link"><i class="fa fa-facebook"></i></a>
@@ -70,10 +69,10 @@ Template Re-distribution is NOT allowed.
 					</div>
 				</div>	
 				<div class="footer-link">
-					<p>Copyright © 2020 Bamba</p>
+					<p>Copyright © 2020 Your Company 
+                    
+                    - Design: TemplateMo</p>
 				</div>
-
-				
 			</div>	
 	</body>
 
