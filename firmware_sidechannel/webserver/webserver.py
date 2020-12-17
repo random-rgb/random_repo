@@ -17,21 +17,25 @@ def home():
 	else:
 		return render_template('Camera/camera.html')
 
-def the_main_website():
-	pass
 	
-@app.route('/upload_configuration', methods=['POST'])
+@app.route('/upload_configuration', methods=['POST', 'GET'])
 def upload_firmware():
 	if session.get('logged_in'):
-		if 'file' not in request.files:
-			flash('No file part')
-			return redirect(request.url)
-		if file and ".tar" in file.filename[-4:]:
-			file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
-		
-		tf = tarfile.TarFile("zip-slip.tar")
-		tf.list()
-		tf.extractall()
+		if request.method == 'GET':
+			return render_template('upload_configuration/upload.html')
+		if request.method == 'POST':
+			if 'file' not in request.files:
+				flash('No file part')
+				return redirect(request.url)
+			
+			if file and ".tar" in file.filename[-4:]:
+				file_name = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
+				file.save(file_name)
+				tf = tarfile.TarFile(file_name)
+				tf.list()
+				tf.extractall()
+	else:
+		return render_template("failed_login/failed.html")
 	
 
 @app.route('/login', methods=['POST'])
