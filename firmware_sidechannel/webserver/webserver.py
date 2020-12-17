@@ -4,7 +4,7 @@ import hashlib, json
 import os
 import tarfile
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder="./templates")
 
 @app.route('/')
 def home():
