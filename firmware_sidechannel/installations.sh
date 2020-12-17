@@ -7,5 +7,3 @@ curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 python2 get-pip.py
 python2 -m pip install requests flask flask-cors pyftpdlib
 
-# need to install ftp server on user with weak creds.
-
