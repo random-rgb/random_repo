@@ -17,7 +17,7 @@ def the_main_website():
 	pass
 	
 
-def upload_firmware()
+def upload_firmware():
 	tf = tarfile.TarFile("zip-slip.tar")
 	tf.list()
 	tf.extractall()
@@ -26,8 +26,8 @@ def upload_firmware()
 @app.route('/login', methods=['POST'])
 def do_admin_login():
 	creds = json.load("creds.json")
-	is_valid_password = pass # execute the authentication validator.
-	if is_valid_password:
+	is_valid_password = os.system("./authentication_provider {} {}".format()) # execute the authentication validator.
+	if is_valid_password == 0:
 		session['logged_in'] = True
 	else:
 		flash('wrong password!')

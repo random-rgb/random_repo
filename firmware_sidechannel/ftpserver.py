@@ -8,9 +8,9 @@ def main():
     # Instantiate a dummy authorizer for managing 'virtual' users
     authorizer = DummyAuthorizer()
 
-    # Define a new user having full r/w permissions and a read-only
+    # Define a new user having read-only premissions.
     # anonymous user
-    authorizer.add_user('user', '12345', '.', perm='lr')
+    authorizer.add_user('user', '12345', 'ftpfiles', perm='lr')
     authorizer.add_anonymous(os.getcwd())
 
     # Instantiate FTP handler class

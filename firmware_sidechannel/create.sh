@@ -1,12 +1,19 @@
 # Create attacker:
 container_name=firmware_$1
 docker run --rm -idt --name $container_name ubuntu
+
+
+docker cp ./webserver $container_name:/home/webserver
+docker exec -it $container_name mkdir /home/ftp
+docker exec -it $container_name mkdir /home/ftp/ftpfiles
+docker cp ./ftpserver.py $container_name:/home/files/ftpserver.py
+
 docker cp ./installations.sh $container_name:/home/installations.sh
 docker exec -it $container_name sh /home/installations.sh
 
-docker cp ./webserver/* $container_name:/home/webserver
+# run the webserver
 docker exec -d $container_name python2 /home/webserver/webserver.py
 
-docker exec -it $container_name mkdir /home/files
-docker cp ./ftpserver.py $container_name:/home/files/ftpserver.py
-docker exec -d $container_name python2 /home/files/ftpserver.py
+# run the ftp server 
+docker exec -d $container_name python2 /home/ftp/ftpserver.py
+
