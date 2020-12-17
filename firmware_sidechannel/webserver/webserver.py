@@ -15,7 +15,7 @@ def home():
 	if not session.get('logged_in'):
 		return render_template('Login/login.html')
 	else:
-		return "Hello Boss!"
+		return render_template('Camera/camera.html')
 
 def the_main_website():
 	pass
