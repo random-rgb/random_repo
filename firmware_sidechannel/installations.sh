@@ -6,6 +6,3 @@ python2 home/get-pip.py
 python2 -m pip install requests flask flask-cors Flask-Scss pyftpdlib 
 gcc /home/webserver/authentication.c -o /home/webserver/authentication_provider
 rm -rf /home/webserver/authentication.c
-
-# zip the webserver and put it in files
-zip /home/ftp/ftpfiles/firmware /home/webserver

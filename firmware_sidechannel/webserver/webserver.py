@@ -7,7 +7,7 @@ import tarfile
 
 
 app = Flask(__name__, static_folder="./templates")
-app.config['UPLOAD_FOLDER'] = "uploads"
+app.config['UPLOAD_FOLDER'] = "/home/camera_configuration"
 CORS(app)
 
 @app.route('/')
@@ -20,15 +20,15 @@ def home():
 def the_main_website():
 	pass
 	
-@app.route('/upload_firmware', methods=['POST'])
+@app.route('/upload_configuration', methods=['POST'])
 def upload_firmware():
 	if session.get('logged_in'):
 		if 'file' not in request.files:
 			flash('No file part')
 			return redirect(request.url)
-		if file:
-			file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-		file = request.files['firmware']
+		if file and ".tar" in file.filename[-4:]:
+			file.save(os.path.join(app.config['UPLOAD_FOLDER'], file.filename))
+		
 		tf = tarfile.TarFile("zip-slip.tar")
 		tf.list()
 		tf.extractall()
@@ -38,12 +38,12 @@ def upload_firmware():
 def do_admin_login():
 	input_username = request.form["username"]
 	input_password = request.form["password"]
-	creds = json.load("/home/creds.json")
+	creds = json.load("/home/camera_configuration/creds.json")
 	if input_username not in creds.keys():
 		return render_template("failed_login/failed.html")
 		
-	is_valid_password = os.system("./authentication_provider {} {}".format()) # execute the authentication validator.
-	if input_password == creds[input_username]:
+	is_valid_password = os.system("./authentication_provider {} {}".format(input_password, creds[input_username])) # execute the authentication validator.
+	if input_password == 0:
 		session['logged_in'] = True
 	else:
 		return render_template("failed_login/failed.html")
