@@ -27,7 +27,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 				try:
 					operation = str(conn.recv(4096))[2:-3]
 					print(operation)
-					if any(f in operation for f  in not allowed):
+					if any(f in operation for f in strings_not_allowed):
 						message = "Do you think you can get out of my jail? {} is not allowed\n".format(strings_not_allowed).encode()
 						conn.sendall(message)
 

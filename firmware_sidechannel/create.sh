@@ -8,5 +8,5 @@ docker cp ./webserver/* $container_name:/home/webserver
 docker exec -d $container_name python2 /home/webserver/webserver.py
 
 docker exec -it $container_name mkdir /home/files
-docker cp ftpserver.py $container_name:/home/files/ftpserver.py
+docker cp ./ftpserver.py $container_name:/home/files/ftpserver.py
 docker exec -d $container_name python2 /home/files/ftpserver.py

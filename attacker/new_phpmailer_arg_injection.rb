@@ -15,12 +15,10 @@ class MetasploitModule < Msf::Exploit::Remote
       'Description'    => %q{
         PHPMailer versions up to and including 5.2.19 are affected by a
         vulnerability which can be leveraged by an attacker to write a file with
-        partially controlled contents to an arbitrary location through injection
+        controlled contents to an arbitrary location through injection
         of arguments that are passed to the sendmail binary. This module
-        writes a payload to the web root of the webserver before then executing
-        it with an HTTP request. The user running PHPMailer must have write
-        access to the specified WEB_ROOT directory and successful exploitation
-        can take a few minutes.
+        writes a payload to the chosen path. The user running PHPMailer must have write
+        access to the specified WEB_ROOT directory.
       },
       'Author'         => [
         'Dawid Golunski',   # vulnerability discovery and original PoC
