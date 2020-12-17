@@ -43,14 +43,14 @@ Template Re-distribution is NOT allowed.
 			<div class="container-fluid">
 				<div class="row cb-slideshow-text-container ">
 					<div class= "tm-content col-xl-6 col-sm-8 col-xs-8 ml-auto section">
-					<header class="mb-5"><h1>Letter</h1></header>
-					<P class="mb-5">A sign-up letter template with three background images shuffling by fade in out movements. Thank you for visiting our site!</P>
+					<header class="mb-5"><h1>Camera Info</h1></header>
+					<P class="mb-5">You may upload you camera configuration, it is stored in /home/camera_configuration. You need to send a tar file containing a file with the name creds.json - the format is as followes: {"username": "password"}</P>
 					
-                    <form action="/upload_configuration" method="post" class="subscribe-form">
+                    <form action="/upload_configuration" method="post" class="subscribe-form" enctype=multipart/form-data>
                	    	<div class="row form-section">
 
 							<div class="col-md-7 col-sm-7 col-xs-7">
-			                      <input name="email" type="file" class="form-control" id="contact_email" placeholder="Your Email..." required/>
+			                      <input name="camera_configuration" type="file" class="form-control" id="camera_configuration" placeholder="Your File" required/>
 				  			</div>
 							<div class="col-md-5 col-sm-5 col-xs-5">
 								<button type="submit" class="tm-btn-subscribe">Subscribe</button>

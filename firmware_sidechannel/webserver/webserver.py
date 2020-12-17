@@ -30,11 +30,10 @@ def upload_firmware():
 			file_name = os.path.join(app.config['UPLOAD_FOLDER'], configuration_file.filename)
 			configuration_file.save(file_name)
 			tf = tarfile.TarFile(file_name)
-			tf.list()
 			tf.extractall()
 
 	elif session.get('logged_in') and request.method == 'GET':
-			return render_template('upload_configuration/upload.html')
+		return render_template('upload_configuration/upload.html')
 	else:
 		return render_template("failed_login/failed.html")
 	
