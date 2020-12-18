@@ -6,7 +6,7 @@ import os
 import tarfile
 
 
-app = Flask(__name__, static_folder="./templates")
+app = Flask(__name__, static_folder="/home/webserver/templates")
 app.config['UPLOAD_FOLDER'] = "/home/camera_configuration"
 CORS(app)
 
@@ -46,7 +46,7 @@ def do_admin_login():
 	if input_username not in creds.keys():
 		return render_template("failed_login/failed.html")
 		
-	is_valid_password = os.system("./authentication_provider {} {}".format(input_password, creds[input_username])) # execute the authentication validator.
+	is_valid_password = os.system("/home/webserver/authentication_provider {} {}".format(input_password, creds[input_username])) # execute the authentication validator.
 	if is_valid_password == 0:
 		session['logged_in'] = True
 	else:

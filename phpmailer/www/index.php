@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-        <title>Vanilla Bootstrap v4.2.1 Theme</title>
+        <title>Bamba Corp</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -14,7 +14,7 @@
         <link rel="stylesheet" href="css/templatemo-main.css">
         <link rel="stylesheet" href="css/owl-carousel.css">
 
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+        <link href="css/google_fonts.css" rel="stylesheet">
 
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
@@ -37,8 +37,8 @@ https://templatemo.com/tm-526-vanilla
     <div class="parallax-content baner-content" id="home">
         <div class="container">
             <div class="first-content">
-                <h1>Vanilla</h1>
-                <span><em>Bootstrap</em> v4.2.1 Theme</span>
+                <h1>Bamba</h1>
+                <span><em>Corp</em> 2020</span>
                 <div class="primary-button">
                     <a href="#services">Discover More</a>
                 </div>
@@ -52,10 +52,9 @@ https://templatemo.com/tm-526-vanilla
             <div class="row">
                 <div class="col-md-4">
                     <div class="left-text">
-                        <h4>More About Vanilla</h4>
+                        <h4>More About Bamba</h4>
                         <div class="line-dec"></div>
-                        <p>Vanilla is free HTML CSS template with Bootstrap v4.2.1 and you can apply this theme for your sites. 
-                        Please share our <a rel="nofollow" href="https://templatemo.com">website</a> to your friends or collegues. Thank you.</p>
+                        <p>Bamba Corp is the main supplier of Bamba in israel, our main goal is to bring happines to people.</p>
                         <ul>
                             <li>-  Praesent porta urna id eros</li>
                             <li>-  Curabitur consectetur malesuada</li>
