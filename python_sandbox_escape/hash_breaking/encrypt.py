@@ -8,10 +8,8 @@ key = [
 	0x88,
 	0x75,
 	0x64,
-	0x23,
-	0x49,
 ]
 
-message = "hello my name is moses and i like pizza"
+message = "hello my name is moses and i like pizza pizza is avram favorite food"
 
 print ''.join([binascii.unhexlify("{:02x}".format(ord(a[0]) ^ a[1])) for a in zip(message, itertools.cycle(key))])

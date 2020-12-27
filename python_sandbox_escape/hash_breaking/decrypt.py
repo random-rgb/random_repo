@@ -1,10 +1,10 @@
 import tqdm
 
-all_asd = [{}, {}, {}, {}]
+all_asd = [{}, {}, {}, {}, {}, {}]
 
 def smart(a, i):
-	if a not in all_asd[i].keys():
-		all_asd[i][a] = [val ^ a for val in samples[i]]
+	# if a not in all_asd[i].keys():
+	# 	all_asd[i][a] = [val ^ a for val in samples[i]]
 	
 	# return all_asd[i][a]
 	return [val ^ a for val in samples[i]]
@@ -23,25 +23,29 @@ def find_keys(samples):
 							for d in range(256):
 								decryptAttempt = smart(d, 3)
 								if (isEnglish(decryptAttempt)):
-									# print("d" , [chr(i) for i in decryptAttempt])
-									# print(a,b,c,d)
-									keysFound.append([a, b, c, d])
+									for e in range(256):
+										decryptAttempt = smart(e, 4)
+										if (isEnglish(decryptAttempt)):
+											for f in range(256):
+												decryptAttempt = smart(f, 5)
+												if (isEnglish(decryptAttempt)):
+													keysFound.append([a, b, c, d, e, f])
 	
 	return keysFound
 
 	
-def find_keys_2():
-	pass
 	
 alphabet = [i for i in range(ord('a'),ord('z')+1,1)] + [ord(" ")]
 getEnglish = lambda text: list(filter(lambda c: c in alphabet, text))
 isEnglish = lambda text: len(getEnglish(text)) == len(text)
 
+key_length = 6
+
 with open('msg', 'rb') as f:
 	encrypted = f.read()[:-1]
 	samples = []
-	for i in range(4):
-		samples.append([val for index, val in enumerate(encrypted) if index % 4 == i])
+	for i in range(key_length):
+		samples.append([val for index, val in enumerate(encrypted) if index % key_length == i])
 
 print(samples)
 
@@ -51,5 +55,5 @@ print(len(keysFound))
 
 for keyset in keysFound:
 	print(keyset)
-	print(''.join(chr(c ^ keyset[i%4]) for i, c in enumerate(encrypted)))
+	print(''.join(chr(c ^ keyset[i%key_length]) for i, c in enumerate(encrypted)))
 	
