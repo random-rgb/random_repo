@@ -9,9 +9,6 @@ docker cp  ./hash_breaking/bamba_recipy.enc /home/bamba_recipy.enc
 docker cp ./hash_breaking/bamba_secret_encrypt.py /home/bamba_secret_encrypt.py
 docker cp ./hash_breaking/bamba_secret_encrypt.py /home/bamba_secret_encrypt.py
 
-
-docker exec -it $container_name 
-
 docker run --rm -idt --name $container_name ubuntu
 docker cp ./installations.sh $container_name:/home/installations.sh
 docker exec -it $container_name sh /home/installations.sh
