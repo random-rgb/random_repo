@@ -1,3 +1,8 @@
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <errno.h>
+
 int append_to_file(char * dataToAppend)
 {
 	FILE *fPtr;
