@@ -13,9 +13,17 @@ chmod +x ./python_sandbox_escape/create.sh
 chmod +x ./python_sandbox_escape/installations.sh
 
 # ./attacker/create.sh $1
+cd firmware_sidechannel 
 ./firmware_sidechannel/create.sh $1
+cd ..
+
+cd phpmailer 
 ./phpmailer/create.sh $1
+cd ..
+
+cd python_sandbox_escape 
 ./python_sandbox_escape/create.sh $1
+cd ..
 
 # turn all running containers to images.
 # docker commit container_id image name
