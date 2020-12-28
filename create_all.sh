@@ -1,7 +1,7 @@
 # raise and configure all the containers
 
-chmod +x ./attacker/create.sh
-chmod +x ./attacker/installations.sh
+# chmod +x ./attacker/create.sh
+# chmod +x ./attacker/installations.sh
 
 chmod +x ./firmware_sidechannel/create.sh
 chmod +x ./firmware_sidechannel/installations.sh
@@ -12,7 +12,7 @@ chmod +x ./phpmailer/installations.sh
 chmod +x ./python_sandbox_escape/create.sh
 chmod +x ./python_sandbox_escape/installations.sh
 
-./attacker/create.sh $1
+# ./attacker/create.sh $1
 ./firmware_sidechannel/create.sh $1
 ./phpmailer/create.sh $1
 ./python_sandbox_escape/create.sh $1
