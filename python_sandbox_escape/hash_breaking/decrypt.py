@@ -41,7 +41,7 @@ isEnglish = lambda text: len(getEnglish(text)) == len(text)
 
 key_length = 6
 
-with open('msg', 'rb') as f:
+with open('bamba_recipy.enc', 'rb') as f:
 	encrypted = f.read()[:-1]
 	samples = []
 	for i in range(key_length):

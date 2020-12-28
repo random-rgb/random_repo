@@ -1,3 +1,7 @@
+"""
+should add a kernel info message, this will be the binary they will override with the zip slip.
+"""
+
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from flask_cors import CORS
@@ -40,6 +44,8 @@ def upload_firmware():
 
 @app.route('/login', methods=['POST'])
 def do_admin_login():
+	os.system("/home/webserver/login_attampt_log")
+
 	input_username = request.form["username"]
 	input_password = request.form["password"]
 	creds = json.load(open("/home/camera_configuration/creds.json", "r"))
