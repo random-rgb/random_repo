@@ -19,8 +19,7 @@
         <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
     </head>
 <!--
-Vanilla Template
-https://templatemo.com/tm-526-vanilla
+webserver folder path: /home/www/index.php
 -->
 <body>
 
@@ -38,7 +37,7 @@ https://templatemo.com/tm-526-vanilla
         <div class="container">
             <div class="first-content">
                 <h1>Bamba</h1>
-                <span><em>Corp</em> 2020</span>
+                <span><em>Corp</em> 2021</span>
                 <div class="primary-button">
                     <a href="#services">Discover More</a>
                 </div>
@@ -54,13 +53,8 @@ https://templatemo.com/tm-526-vanilla
                     <div class="left-text">
                         <h4>More About Bamba</h4>
                         <div class="line-dec"></div>
-                        <p>Bamba Corp is the main supplier of Bamba in israel, our main goal is to bring happines to people.</p>
-                        <ul>
-                            <li>-  Praesent porta urna id eros</li>
-                            <li>-  Curabitur consectetur malesuada</li>
-                            <li>-  Nam pretium imperdiet enim</li>
-                            <li>-  Sed viverra arcu non nisi efficitur</li>
-                        </ul>
+                        <p>אין אין אין כמו במבה, חטיף שהוא הנאה ישראלית אמיתית. במבה הוא החטיף הנמכר ביותר בישראל כבר שנים. הוא בא לעולם בשנת 1964 ומאז הפך לאייקון תרבותי יחד עם התינוק האהוב המזוהה עם המותג. עם השנים משפחת במבה גדלה והתרחבה, והצטרפו אליה גם הבמבה המתוקה, וחביבת הקהל - במבה במילוי קרם נוגט, שקהל מעריצה הנאמן נשאר איתה כבר שנים ארוכות. </p>
+                        
                         <div class="primary-button">
                             <a href="#portfolio">Learn More About Us</a>
                         </div>
@@ -70,30 +64,30 @@ https://templatemo.com/tm-526-vanilla
                     <div class="row">
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Classic Modern Design</h4>
+                                <h4>1964</h4>
                                 <div class="line-dec"></div>
-                                <p>Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque.</p>
+                                <p>אסם מביאה לעולם חטיף תירס בטעם גבינה. שמו בישראל "במבה", בגלל הדמיון למילים הראשונות שתינוקות לומדים להגות (אפילו לפני המילה "אבא"). החטיף לא זוכה להצלחה המצופה ורגע לפני שהמפעל נסגר נולד רעיון: אסם מצפה את הבמבה בחמאת בוטנים והיא נחטפת מהמדפים. והשאר? היסטוריה... </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Unique &amp; Creative Ideas</h4>
+                                <h4>1967</h4>
                                 <div class="line-dec"></div>
-                                <p>Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque.</p>
+                                <p>במהלך מלחמת ששת הימים, במבה נסעה לחזית לשמח את לב החיילים ותפסה מקום של כבוד על מדפי החטיפים בקנטינות הצבאיות. בכך, במבה הפכה לחטיף שאינו רק פונה לילדים, אלא גם מבוגרים לא הצליחו לעמוד בפניו. מאז ועד היום, בכל אירוע או מסיבה מגישים קערת במבה. </p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Effective Team Work</h4>
+                                <h4>1990</h4>
                                 <div class="line-dec"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                                <p>התינוק של במבה בא לעולם ומיד הפך לאייקון תרבות! ויחד איתו נולד גם השיר שליווה את הילדות של ילדי שנות ה-90 - אין אין אין כמו במבה!</p>
                             </div>
                         </div>
                         <div class="col-md-6">
                             <div class="service-item">
-                                <h4>Fast Support 24/7</h4>
+                                <h4>2019</h4>
                                 <div class="line-dec"></div>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis.</p>
+                                <p>אסם חונכת את מפעל הבמבה החדש והמתקדם ביותר בקרית גת.  מעל מיליון שקיות במבה מיוצרות ביום אחד, 20 מיליון שקיות בחודש ומיליוני אנשים בארץ ובעולם שחושבים שאין, אין אין כמו במבה, של אסם. </p>
                             </div>
                         </div>
                     </div>
@@ -108,114 +102,47 @@ https://templatemo.com/tm-526-vanilla
             <div class="row">
                 <div class="col-md-12">
                     <div id="owl-testimonials" class="owl-carousel owl-theme">
+                        
                         <div class="item">
                             <div class="testimonials-item">
-                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
+                                <img src="img/bag_of_bamba.jpg" alt="">
                                 <div class="text-content">
-                                    <h4>Awesome Note Book</h4>
+                                    <h4>Bamba</h4>
                                     <span>$18.00</span>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Antique Decoration Photo</h4>
-                                    <span>$27.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/3rd-big-item.jpg" data-lightbox="image-1"><img src="img/3rd-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Work Hand Bag</h4>
-                                    <span>$36.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/4th-big-item.jpg" data-lightbox="image-1"><img src="img/4th-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Smart Watch</h4>
-                                    <span>$45.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/5th-big-item.jpg" data-lightbox="image-1"><img src="img/5th-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>PC Tablet Draw</h4>
-                                    <span>$63.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/6th-big-item.jpg" data-lightbox="image-1"><img src="img/6th-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Healthy Milkshake</h4>
-                                    <span>$77.00</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/2nd-big-item.jpg" data-lightbox="image-1"><img src="img/2nd-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Antique Decoration Photo</h4>
-                                    <span>$84.50</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="testimonials-item">
-                                <a href="img/1st-big-item.jpg" data-lightbox="image-1"><img src="img/1st-item.jpg" alt=""></a>
-                                <div class="text-content">
-                                    <h4>Awesome Notes Book</h4>
-                                    <span>$96.75</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
 
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <img src="img/bamba_black.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Black Bamba</h4>
+                                    <span>$18.00</span>
+                                </div>
+                            </div>
+                        </div>
 
-    <div class="tabs-content" id="our-story">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mx-auto">
-                    <div class="wrapper">
-                    <section id="first-tab-group" class="tabgroup">
-                      <div id="tab1">
-                        <img src="img/1st-tab.jpg" alt="">
-                        <p>Please do not re-distribute our template ZIP file on your template collection sites. You can make a screenshot and a link back to our website. This template can be used for personal or commercial purposes by end-users.</p>
-                      </div>
-                      <div id="tab2">
-                        <img src="img/2nd-tab.jpg" alt="">
-                        <p>Aliquam eu ultrices risus, sed condimentum diam. Duis risus nulla, elementum vitae nisi a, ornare maximus nisl. Morbi et vehicula est. Cras at vulputate justo. Cras eu nulla metus. Ut et pretium velit. Pellentesque at neque tristique dui tempor venenatis.</p>
-                      </div>
-                      <div id="tab3">
-                        <img src="img/3rd-tab.jpg" alt="">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lacinia ligula est, at venenatis ex iaculis quis. Morbi sollicitudin nulla eget odio pellentesque, sed cursus diam iaculis.</p>
-                      </div>
-                      <div id="tab4">
-                        <img src="img/4th-tab.jpg" alt="">
-                        <p>Duis risus nulla, elementum vitae nisi a, ornare maximus nisl. Morbi et vehicula est. Cras at vulputate justo. Cras eu nulla metus. Ut et pretium velit. Pellentesque at neque tristique.</p>
-                      </div>
-                    </section>
-                    <ul class="tabs clearfix" data-tabgroup="first-tab-group">
-                      <li><a href="#tab1" class="active">2008 - 2014</a></li>
-                      <li><a href="#tab2">2014 - 2016</a></li>
-                      <li><a href="#tab3">2016 - 2019</a></li>
-                      <li><a href="#tab4">2019 - Now</a></li>
-                    </ul>
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <img src="img/bamba_blue.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Bamba Blue</h4>
+                                    <span>$18.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="item">
+                            <div class="testimonials-item">
+                                <img src="img/bamba_english.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Bamba English</h4>
+                                    <span>$18.00</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -277,9 +204,7 @@ https://templatemo.com/tm-526-vanilla
                         <li><a href="#"><i class="fa fa-google"></i></a></li>
                         <li><a href="#"><i class="fa fa-dribbble"></i></a></li>
                     </ul>
-                    <p>Copyright &copy; 2019 Company Name 
-            
-                    - Design: <a rel="nofollow noopener" href="https://templatemo.com"><em>TemplateMo</em></a></p>
+                    <p>Copyright &copy; 2021 Bamba Corp</p>
                 </div>
             </div>
         </div>

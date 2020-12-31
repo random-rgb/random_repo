@@ -1,6 +1,4 @@
-"""
-should add a kernel info message, this will be the binary they will override with the zip slip.
-"""
+# run with python 3.6
 
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort

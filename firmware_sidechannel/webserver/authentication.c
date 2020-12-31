@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
         {
             return 1;
         }
-        msleep(400);
+        msleep(300);
     }
 
     return 0;
