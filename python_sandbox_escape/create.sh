@@ -4,7 +4,11 @@ echo "Creating Python sandbox with name " $container_name
 
 # Hash cracking.
 python2 -c "print bytearray([0x82,0x19,0x20,0x88,0x75,0x64])" > ./hash_breaking/bamba_secret_key.key
-cat ./hash_breaking/bamba_secret.txt | python2 ./hash_breaking/bamba_secret_encrypt.py > ./hash_breaking/bamba_recipy.enc
+
+cd hash_breaking
+cat ./bamba_secret.txt | python2 ./bamba_secret_encrypt.py > ./bamba_recipy.enc
+cd ..
+
 docker cp ./hash_breaking/bamba_recipy.enc $container_name:/home/bamba_recipy.enc
 docker cp ./hash_breaking/bamba_secret_encrypt.py $container_name:/home/bamba_secret_encrypt.py
 docker cp ./hash_breaking/bamba_secret_encrypt.py $container_name:/home/bamba_secret_encrypt.py
