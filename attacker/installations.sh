@@ -2,14 +2,13 @@
 # The Attacker VM:
 # Add atacker user
 apt update
-apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim php openssh-server tcpdump netcat apache2 tree git simpleproxy
+apt install -y python2 python3 python3-pip nmap xxd net-tools gcc wget curl iputils-ping vim openssh-server tcpdump netcat tree git simpleproxy
 
 passwd
 python3 -c "print('123\n123')" | adduser attacker
 usermod -a -G sudo attacker
 cd /home/attacker
 
-service apache2 start
 service ssh start
 curl https://bootstrap.pypa.io/get-pip.py --output get-pip.py
 python2 get-pip.py
