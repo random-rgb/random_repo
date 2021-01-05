@@ -1,10 +1,7 @@
 # Create attacker:
 container_name=attacker_$1
-
-echo "Starting " $container_name
-
 docker run --rm -idt --name $container_name ubuntu
-docker cp ./installations_online.sh $container_name:/home/installations.sh
+docker cp ./installations.sh $container_name:/home/installations.sh
 docker exec -it $container_name sh /home/installations.sh
 
 # Change the phpmailer exploit:
