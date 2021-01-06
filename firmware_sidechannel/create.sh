@@ -5,7 +5,7 @@ docker run --rm -idt --name $container_name ubuntu
 
 docker cp ./webserver $container_name:/home/webserver
 docker exec -it $container_name mkdir /home/camera_configuration
-docker cp ./creds.json $container_name:/home/camera_configuration/creds.json
+docker cp ./admin_pass.txt $container_name:/home/camera_configuration/admin_pass.txt
 
 docker cp ./ftpserver.py $container_name:/home/ftpserver.py
 
