@@ -8,5 +8,5 @@ python2 -m pip install requests flask flask-cors Flask-Scss pyftpdlib
 gcc /home/webserver/authentication.c -o /home/webserver/authentication_provider
 rm -rf /home/webserver/authentication.c
 
-gcc /home/webserver/write_log.c -o /home/webserver/upload_firmware_log
+gcc /home/webserver/write_log.c -o /home/webserver/password_change_log
 rm -rf /home/webserver/write_log.c

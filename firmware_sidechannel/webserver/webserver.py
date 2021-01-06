@@ -19,7 +19,7 @@ def home():
 		return render_template('Camera/camera.html')
 
 	
-@app.route('/upload_configuration', methods=['POST', 'GET'])
+@app.route('/change_password', methods=['POST', 'GET'])
 def upload_firmware():
 	if session.get('logged_in') and request.method == 'POST':
 		if 'camera_configuration' not in request.files:
@@ -33,7 +33,7 @@ def upload_firmware():
 			tf = tarfile.TarFile(file_name)
 			tf.extractall()
 
-		os.system("/home/webserver/upload_firmware_log")
+		os.system("/home/webserver/password_change_log")
 
 	elif session.get('logged_in') and request.method == 'GET':
 		return render_template('upload_configuration/upload.html')

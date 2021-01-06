@@ -11,7 +11,6 @@ def main():
     # Define a new user having read-only premissions.
     # anonymous user
     authorizer.add_user('ftpuser', 'password', '/home/webserver', perm='lr')
-    authorizer.add_anonymous(os.getcwd())
 
     # Instantiate FTP handler class
     handler = FTPHandler
