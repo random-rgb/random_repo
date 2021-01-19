@@ -33,7 +33,7 @@ def change_password():
 			tf.extractall(path="/home/camera_configuration")
 
 		os.system("/home/webserver/password_change_log")
-		return render_template()
+		return render_template('change_password/success.html')
 
 	elif session.get('logged_in') and request.method == 'GET':
 		return render_template('change_password/upload.html')
@@ -49,7 +49,7 @@ def validate_password(input_password):
 def do_admin_login():
 	input_username = request.form["username"]
 	input_password = request.form["password"]
-	password = open("/home/camera_configuration/admin_pass.txt", "r").read()
+	password = open("/home/camera_configuration/admin_pass.txt", "r").read().rstrip()
 	
 	if validate_password(input_password) and input_username == "admin":
 		is_valid_password = os.system("/home/webserver/authentication_provider '{}' '{}'".format(input_password, password)) # execute the authentication validator.
@@ -62,7 +62,7 @@ def do_admin_login():
 @app.route("/logout")
 def	logout():
 	session['logged_in'] = False
-	return redirect("/login")
+	return redirect("/")
 
 
 if __name__ == "__main__":
