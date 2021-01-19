@@ -1,5 +1,4 @@
-# run with python 3.6
-
+# run with python 2.7
 from flask import Flask
 from flask import Flask, flash, redirect, render_template, request, session, abort
 from flask_cors import CORS
@@ -20,7 +19,7 @@ def home():
 
 	
 @app.route('/change_password', methods=['POST', 'GET'])
-def upload_firmware():
+def change_password():
 	if session.get('logged_in') and request.method == 'POST':
 		if 'camera_configuration' not in request.files:
 			print 'No file part'
@@ -34,9 +33,10 @@ def upload_firmware():
 			tf.extractall(path="/home/camera_configuration")
 
 		os.system("/home/webserver/password_change_log")
+		return render_template()
 
 	elif session.get('logged_in') and request.method == 'GET':
-		return render_template('upload_configuration/upload.html')
+		return render_template('change_password/upload.html')
 	else:
 		return render_template("failed_login/failed.html")
 	
@@ -58,7 +58,12 @@ def do_admin_login():
 			return home()
 	
 	return render_template("failed_login/failed.html")
-	
+
+@app.route("/logout")
+def	logout():
+	session['logged_in'] = False
+	return redirect("/login")
+
 
 if __name__ == "__main__":
 	app.secret_key = os.urandom(12)
