@@ -108,7 +108,7 @@ webserver folder path: /home/www/index.php
                                 <img src="img/bag_of_bamba.jpg" alt="">
                                 <div class="text-content">
                                     <h4>Bamba</h4>
-                                    <span>$18.00</span>
+                                    <span>$1.00</span>
                                 </div>
                             </div>
                         </div>
@@ -117,7 +117,7 @@ webserver folder path: /home/www/index.php
                             <div class="testimonials-item">
                                 <img src="img/bamba_black.jpg" alt="">
                                 <div class="text-content">
-                                    <h4>Black Bamba</h4>
+                                    <h4>Black Bamba With Choclate</h4>
                                     <span>$18.00</span>
                                 </div>
                             </div>
@@ -127,8 +127,8 @@ webserver folder path: /home/www/index.php
                             <div class="testimonials-item">
                                 <img src="img/bamba_blue.jpg" alt="">
                                 <div class="text-content">
-                                    <h4>Bamba Blue</h4>
-                                    <span>$18.00</span>
+                                    <h4>Bamba Blue Delux Edition</h4>
+                                    <span>$1000.00</span>
                                 </div>
                             </div>
                         </div>
@@ -137,8 +137,8 @@ webserver folder path: /home/www/index.php
                             <div class="testimonials-item">
                                 <img src="img/bamba_english.jpg" alt="">
                                 <div class="text-content">
-                                    <h4>Bamba English</h4>
-                                    <span>$18.00</span>
+                                    <h4>Bamba Lehol</h4>
+                                    <span>$10.00</span>
                                 </div>
                             </div>
                         </div>
@@ -151,6 +151,7 @@ webserver folder path: /home/www/index.php
 
 
     <div class="parallax-content contact-content" id="contact-us">
+    	<!-- Powered by phpmailer -->
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
